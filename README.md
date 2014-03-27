@@ -1,5 +1,6 @@
 Projet ISN
 ==========
 
-  __Travail par séances :__
+  **Travail par séances :**
+  -------------------------
     - 27/03 : Création d'une fonction move()
