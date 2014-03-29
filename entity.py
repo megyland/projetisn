@@ -39,7 +39,3 @@ class Entity:
 			print("error")
 		print(self.x)
 		print(self.y)
-
-"""Schro = Entity("ennemy",0,0) # Création de Schrodinger
-Schro.move() # Déplacement de Schrodinger (utiliser boucle avec délai) """
-
