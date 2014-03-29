@@ -10,3 +10,8 @@ Travail par séances :
  - Création d'une classe _Entity_, pour référencer tous les éléments du jeu, comme Schrödinger, la boîte du chat, les objets posés...
  - Fonction _move()_ intégrée comme méthode à la classe _Entity_
 
+Objectifs :
+-----------
+* ~~Prise en compte des bords dans _move()_~~
+* Prise en compte de l'absence d'obstacle au dessus (ce qui fait changer de direction) dans _move()_
+* Création d'un fichier pour tester la classe _Entity_ et ses méthodes
