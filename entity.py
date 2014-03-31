@@ -35,7 +35,5 @@ class Entity:
 			ty = self.y + tv
 		else :
 			print("error")
-		print(self.x, self.y) # affichage pour test
-		print(self.d, self.a, self.v) # affichage pour test
 
 
