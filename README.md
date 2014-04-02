@@ -22,3 +22,9 @@ Objectifs :
 * ~~Prise en compte des bords dans _move()_~~ **Fait**
 * Prise en compte de l'absence d'obstacle au dessus (ce qui fait changer de direction) dans _move()_
 * ~~Création d'un fichier pour tester la classe _Entity_ et ses méthodes~~ **Fait**
+
+Répartition du travail :
+------------------------
+Objectif | Personne en charge | Etat
+:-------:|:------------------:|:-----:
+IA de Schrödinger | Choumat | En développement
