@@ -1,8 +1,18 @@
 Projet ISN
 ==========
 
-Travail par séances :
----------------------
+Répartition du travail :
+------------------------
+Objectif | Personne en charge | Etat
+:-------:|:------------------:|:-----:
+IA de Schrödinger | Choumat | En développement
+Apparence du niveau | ? | En développement
+
+Travail de megyland par séances :
+---------------------------------
+
+Travail de Choumat par séances :
+--------------------------------
 * __27/03__ :
  - Création d'une fonction _move()_
 
@@ -17,14 +27,6 @@ Travail par séances :
  - Documentation sur la bibliothèque _Pygame_, qui va nous servir d'interface graphique  
 (tutoriel intéressant : http://fr.openclassrooms.com/informatique/cours/interface-graphique-pygame-pour-python )
 
-Objectifs :
------------
-* ~~Prise en compte des bords dans _move()_~~ **Fait**
-* Prise en compte de l'absence d'obstacle au dessus (ce qui fait changer de direction) dans _move()_
-* ~~Création d'un fichier pour tester la classe _Entity_ et ses méthodes~~ **Fait**
+Travail de pascalcpp par séances :
+----------------------------------
 
-Répartition du travail :
-------------------------
-Objectif | Personne en charge | Etat
-:-------:|:------------------:|:-----:
-IA de Schrödinger | Choumat | En développement
