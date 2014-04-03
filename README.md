@@ -3,10 +3,16 @@ Projet ISN
 
 Répartition du travail :
 ------------------------
-Objectif | Personne en charge | Etat
-:-------:|:------------------:|:-----:
-IA de Schrödinger | Choumat | En développement
-Apparence du niveau | ? | En développement
+Objectif | Personne en charge | Etat | Commentaires
+:-------:|:------------------:|:----:|:------------:
+IA de Schrödinger | Choumat | En développement | 
+Apparence du niveau | ? | ? |
+Ajout de _Erreur de calcul_ | ? | ? |
+Ajout de _Expérience intéressante_ | ? | ? |
+Ajout de _Compteur de vitesse_ | ? | ? |
+Ajout de _Expérience ratée_ | ? | ? |
+Ajout de _Début d'incendie_ | ? | ? |
+Placement des objets par Drag&Drop | ? | ? |
 
 Travail de megyland par séances :
 ---------------------------------
