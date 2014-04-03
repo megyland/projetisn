@@ -3,7 +3,8 @@ Projet ISN
 
 Répartition du travail :
 ------------------------
-**Les personnes intéressées par un de ces objectifs doivent se signaler dans le tableau**
+**Les personnes intéressées par un de ces objectifs doivent se signaler dans le tableau.**  
+
 Objectif | Personne en charge | Etat | Commentaires
 :-------:|:------------------:|:----:|:------------:
 IA de Schrödinger | Choumat | En développement | 
@@ -14,7 +15,7 @@ Ajout de _Compteur de vitesse_ | ? | ? |
 Ajout de _Expérience ratée_ | ? | ? |
 Ajout de _Début d'incendie_ | ? | ? |
 Placement des objets par Drag&Drop | ? | ? |
-... | ? | ?
+... | ? | ? |
 
 Travail de megyland par séances :
 ---------------------------------
