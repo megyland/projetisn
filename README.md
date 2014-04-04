@@ -17,10 +17,10 @@ Ajout de _Début d'incendie_ | ? | ? |
 Placement des objets par Drag&Drop | ? | ? |
 ... | ? | ? |
 
-Travail de megyland par séances :
+Travail de megyland par séance :
 ---------------------------------
 
-Travail de Choumat par séances :
+Travail de Choumat par séance :
 --------------------------------
 * __27/03__ :
  - Création d'une fonction _move()_
@@ -36,6 +36,6 @@ Travail de Choumat par séances :
  - Documentation sur la bibliothèque _Pygame_, qui va nous servir d'interface graphique  
 (tutoriel intéressant : http://fr.openclassrooms.com/informatique/cours/interface-graphique-pygame-pour-python )
 
-Travail de pascalcpp par séances :
+Travail de pascalcpp par séance :
 ----------------------------------
 
