@@ -1,4 +1,4 @@
-Projet ISN
+Projet ISN : Schrödinger Cat's
 ==========
 
 Répartition du travail :
