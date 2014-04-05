@@ -39,3 +39,5 @@ Travail de Choumat par séance :
 Travail de pascalcpp par séance :
 ----------------------------------
 
+* 5/04 :
+ - Ajout de l'écran d'accueil (les images pourront êtres modifiées par la suite, je les ai créées à l'arrache pour pouvoir tester)
