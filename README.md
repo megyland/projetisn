@@ -1,4 +1,4 @@
-Projet ISN : Schrödinger Cat's
+Projet ISN : Schrödinger's Cat
 ==========
 
 Répartition du travail :
@@ -17,10 +17,10 @@ Ajout de _Début d'incendie_ | ? | ? |
 Placement des objets par Drag&Drop | ? | ? |
 ... | ? | ? |
 
-Travail de megyland par séance :
+Travail de _megyland_ par séance :
 ---------------------------------
 
-Travail de Choumat par séance :
+Travail de _Choumat_ par séance :
 --------------------------------
 * __27/03__ :
  - Création d'une fonction _move()_
@@ -36,8 +36,8 @@ Travail de Choumat par séance :
  - Documentation sur la bibliothèque _Pygame_, qui va nous servir d'interface graphique  
 (tutoriel intéressant : http://fr.openclassrooms.com/informatique/cours/interface-graphique-pygame-pour-python )
 
-Travail de pascalcpp par séance :
+Travail de _pascalcpp_ par séance :
 ----------------------------------
 
-* 5/04 :
+* __5/04__ :
  - Ajout de l'écran d'accueil (les images pourront êtres modifiées par la suite, je les ai créées à l'arrache pour pouvoir tester)
