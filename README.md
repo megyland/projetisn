@@ -1,6 +1,8 @@
 Projet ISN : Schrödinger's Cat
 ==========
 
+![alt text](http://img15.hostingpics.net/pics/166702logom.png "Logo")
+
 Répartition du travail :
 ------------------------
 **Les personnes intéressées par un de ces objectifs doivent se signaler dans le tableau.**  
