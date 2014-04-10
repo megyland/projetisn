@@ -11,7 +11,7 @@ Objectif | Personne en charge | Etat | Commentaires
 :-------:|:------------------:|:----:|:------------:
 IA de Schrödinger | Choumat | En développement | 
 Apparence du niveau | megyland | En développement |
-Ajout de _Erreur de calcul_ | ? | ? |
+Ajout de _Erreur de calcul_ | Choumat | En test |
 Ajout de _Expérience intéressante_ | ? | ? |
 Ajout de _Compteur de vitesse_ | ? | ? |
 Ajout de _Expérience ratée_ | ? | ? |
