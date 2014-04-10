@@ -1,7 +1,7 @@
 # -*-coding:utf-8-*-
 
 class Enemy:
-	# Classe des entités (Schro., le chat, les pièges...)
+	# Classe de Schrödinger
 	def __init__(self, dx, dy): # Méthode constructeur (s'active à l'initialisation de la classe)
 		self.x=dx
 		self.y=dy
@@ -34,8 +34,10 @@ class Enemy:
 			ty = self.y + self.v
 		else :
 			print("error")
+	
+	# Les prochaines méthodes sont les actions des pièges :
 			
-	def correct_error(time) : #Piège "Erreur de calcul"
+	def correct_error(time) : # Piège "Erreur de calcul"
 		if time != 0 :
 			self.tempV = self.v
 			self.v = 0
