@@ -18,21 +18,21 @@ class Entity:
 		self.v = (1 + self.a ) * self.v
 
 		if self.d == "left" :
-			tx = self.x - tv
+			tx = self.x - self.v
 			if tx <= 0 : # changement de direction lorsque Schro. arrive en bout de ligne (par la gauche)
 				self.x = 0
 				self.d = "up"
 			else :
 				self.x = tx
 		elif self.d == "right" :
-			tx = self.x + tv
+			tx = self.x + self.v
 			if tx >= 100 : # changement de direction lorsque Schro. arrive en bout de ligne (par la droite)
 				self.x = 100
 				self.d = "up"
 			else :
 				self.x = tx
 		elif self.d == "up" :
-			ty = self.y + tv
+			ty = self.y + self.v
 		else :
 			print("error")
 
