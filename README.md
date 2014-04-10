@@ -17,6 +17,7 @@ Ajout de _Compteur de vitesse_ | ? | ? |
 Ajout de _Expérience ratée_ | ? | ? |
 Ajout de _Début d'incendie_ | ? | ? |
 Placement des objets par Drag&Drop | ? | ? |
+Ecran d'accueil | pascalcpp | Fini
 ... | ? | ? |
 
 Travail de _megyland_ par séance :
