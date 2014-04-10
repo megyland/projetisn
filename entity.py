@@ -1,14 +1,13 @@
 # -*-coding:utf-8-*-
 
-class Entity:
+class Enemy:
 	# Classe des entités (Schro., le chat, les pièges...)
-	def __init__(self, type, dx, dy): # Méthode constructeur (s'active à l'initialisation de la classe)
+	def __init__(self, dx, dy): # Méthode constructeur (s'active à l'initialisation de la classe)
 		self.x=dx
 		self.y=dy
-		if type == "ennemy":
-			self.d="right"
-			self.v=0.1
-			self.a=0.003
+		self.d="right"
+		self.v=0.1
+		self.a=0.003
 	def move(self) : # gestion de l'IA de Schro.
 		# x : abscisse
 		# y : ordonnée
@@ -35,5 +34,14 @@ class Entity:
 			ty = self.y + self.v
 		else :
 			print("error")
+			
+	def correct_error(time) : #Piège "Erreur de calcul"
+		if time != 0 :
+			self.tempV = self.v
+			self.v = 0
+		else :
+			self.v = 0.1
+		
+		
 
 
