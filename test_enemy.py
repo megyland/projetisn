@@ -1,6 +1,6 @@
 # -*-coding:utf-8-*-
 """
-Objectif : tester la classe Entity et ses méthodes
+Objectif : tester la classe Enemy et ses méthodes
 """
 
 from enemy import *
