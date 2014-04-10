@@ -39,6 +39,10 @@ Travail de _Choumat_ par séance :
  - Documentation sur la bibliothèque _Pygame_, qui va nous servir d'interface graphique  
 (tutoriel intéressant : http://fr.openclassrooms.com/informatique/cours/interface-graphique-pygame-pour-python )
 
+* __9/04__ :
+ - Fichier _entity.py_ renommé _enemy.py_
+ - Ajout de la méthode d'_Enemy_ nommée *correct_error()* : action du piège _Erreur de calcul_
+
 Travail de _pascalcpp_ par séance :
 ----------------------------------
 
