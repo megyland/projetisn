@@ -3,9 +3,9 @@
 Objectif : tester la classe Entity et ses méthodes
 """
 
-from entity import *
+from enemy import *
 
-Schro = Entity("ennemy",0,0) # Création de Schrodinger
+Schro = Enemy(0,0) # Création de Schrodinger
 Schro.move() # Déplacement de Schrodinger
 
 n = 0
