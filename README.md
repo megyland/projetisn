@@ -15,7 +15,7 @@ Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, 
 Ajout de _Expérience intéressante_ | ? | ? | Arrêt court, puis redémarrage normal
 Ajout de _Compteur de vitesse_ | ? | ? | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps
 Ajout de _Expérience ratée_ | ? | ? | Arrêt long, puis redémarrage normal
-Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être arrêtée ; si une flamme atteint le chat, il meurt
+Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt
 Placement des objets par Drag&Drop | ? | ? |
 Ecran d'accueil | pascalcpp | Fini
 ... | ? | ? |
