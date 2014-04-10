@@ -49,3 +49,6 @@ Travail de _pascalcpp_ par séance :
 
 * __5/04__ :
  - Ajout de l'écran d'accueil (les images pourront êtres modifiées par la suite, je les ai créées à l'arrache pour pouvoir tester)
+
+*******************
+**NB : Pour tester le programme, il est nécessaire de le télécharger avec l'option _Download ZIP_, puis de lancer le fichier _main.py_.**
