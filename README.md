@@ -5,7 +5,7 @@ Projet ISN : Schrödinger's Cat
 
 Écran titre
 ---------------
-![alt text](http://img15.hostingpics.net/pics/664306titleScreenConcept.png "Logo")
+![alt text](http://img15.hostingpics.net/pics/664306titleScreenConcept.png "Ecran d'accueil")
 
 Répartition du travail :
 ------------------------
@@ -22,8 +22,9 @@ Ajout de _Expérience ratée_ | ? | ? | Arrêt long, puis redémarrage normal
 Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt
 Placement des objets par saisie des coordonnées | ? | ? | Proposition temporaire
 Placement des objets par Drag&Drop | ? | ? |
-Ecran d'accueil | pascalcpp | Fini
-... | ? | ? |
+Ecran d'accueil | pascalcpp | Fini | Nouvelles images proposées
+Timer | ? | ? |
+Score | ? | ? |
 
 Travail de _megyland_ par séance :
 ---------------------------------
