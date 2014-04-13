@@ -1,7 +1,7 @@
 Projet ISN : Schrödinger's Cat
 ==========
 
-![alt text](http://img15.hostingpics.net/pics/166702logom.png "Logo")
+![alt text](http://img15.hostingpics.net/pics/916035logom.png "Logo")
 
 Répartition du travail :
 ------------------------
