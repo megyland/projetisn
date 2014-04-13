@@ -25,6 +25,7 @@ Placement des objets par Drag&Drop | ? | ? |
 Ecran d'accueil | pascalcpp | Fini | Nouvelles images proposées
 Timer | ? | ? |
 Score | ? | ? |
+... | ? | ? |
 
 Travail de _megyland_ par séance :
 ---------------------------------
