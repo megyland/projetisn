@@ -1,6 +1,6 @@
 #-*- coding:utf-8 -*-
 
-import pygame
+import os, pygame
 from pygame.locals import *
 
 def isinrect(pos, rect) :
@@ -17,7 +17,19 @@ def write(text, color=(255, 255, 255), size=20) :
     Returns a label
     """
 
-    font = pygame.font.get_default_font()
+    # font = pygame.font.get_default_font()
+    font = os.path.join("font", "nimbus-bold-condensed.pfb")
     renderer = pygame.font.Font(font, size)
 
     return renderer.render(text, True, color)
+
+def formattext(text, chars=20, color=(255, 255, 255), size=20) :
+    words = text.split(" ")
+    lines = [""]
+    for i in words :
+        if len(lines[-1]) + len(i) < chars :
+            lines[-1] += i + " "
+        else :
+            lines.append(i+" ")
+
+    return [ write(l, color, size) for l in lines ]

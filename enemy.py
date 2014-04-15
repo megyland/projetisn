@@ -43,7 +43,3 @@ class Enemy:
 			self.v = 0
 		else :
 			self.v = 0.1
-		
-		
-
-
