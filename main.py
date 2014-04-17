@@ -26,7 +26,7 @@ class App :
     def __init__(self) :
 
         # Create a new window
-        self.disp = pygame.display.set_mode( (512, 512) )
+        self.disp = pygame.display.set_mode( (W, H) )
         pygame.display.set_caption("Schrödinger's cat")
 
         # Clock
