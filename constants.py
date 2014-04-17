@@ -70,10 +70,10 @@ TRAPS = [ (IMG_INTERESTING, u"Interesting experiment", u"Schrödinger can't help
 # Button places
 
 ## Main menu
-BTN_NEWGAME  = (131, 250, 402, 82)
-BTN_LOADGAME = (131, 350, 402, 82)
-BTN_QUIT     = (131, 450, 402, 82)
-BTN_BACK     = (131, 450, 402, 82)
+BTN_NEWGAME  = (219, 430, 402, 82)
+BTN_LOADGAME = (219, 512, 402, 82)
+BTN_QUIT     = (219, 594, 402, 82)
+BTN_BACK     = (219, 676, 402, 82)
 
 ## Lab
 BTN_LAB_QUIT  = (16*SQUARE+PANEL-16, 0, 16, 16)
