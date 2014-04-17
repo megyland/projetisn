@@ -14,7 +14,7 @@ if not os.path.exists(CONFIG) :
     os.makedirs(CONFIG)
 
 # Dimensions
-W, H         = 512, 512
+W, H         = 840, 1080
 
 # Play music
 pygame.mixer.music.load( os.path.join("sound", "music.ogg") )
