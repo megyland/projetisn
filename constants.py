@@ -25,12 +25,12 @@ BLACK     = (0,0,0)
 ## Main menu
 IMG_BACKGROUND      = pygame.image.load( os.path.join("img", "homescreen.png") )
 
-IMG_NEWGAME         = pygame.image.load( os.path.join("img", "newgame.png") )
-IMG_NEWGAME_HOVER   = pygame.image.load( os.path.join("img", "newgame_hover.png") )
-IMG_LOADGAME        = pygame.image.load( os.path.join("img", "loadgame.png") )
-IMG_LOADGAME_HOVER  = pygame.image.load( os.path.join("img", "loadgame_hover.png") )
-IMG_QUIT            = pygame.image.load( os.path.join("img", "quit.png") )
-IMG_QUIT_HOVER      = pygame.image.load( os.path.join("img", "quit_hover.png") )
+IMG_NEWGAME         = pygame.image.load( os.path.join("img", "buttonNewGame.png") )
+IMG_NEWGAME_HOVER   = pygame.image.load( os.path.join("img", "buttonNewGameHover.png") )
+IMG_LOADGAME        = pygame.image.load( os.path.join("img", "buttonLoadGame.png") )
+IMG_LOADGAME_HOVER  = pygame.image.load( os.path.join("img", "buttonLoadGameHover.png") )
+IMG_QUIT            = pygame.image.load( os.path.join("img", "buttonQuit.png") )
+IMG_QUIT_HOVER      = pygame.image.load( os.path.join("img", "buttonQuitHover.png") )
 IMG_BACK            = pygame.image.load( os.path.join("img", "back.png") )
 IMG_BACK_HOVER      = pygame.image.load( os.path.join("img", "back_hover.png") )
 
@@ -70,10 +70,10 @@ TRAPS = [ (IMG_INTERESTING, u"Interesting experiment", u"Schrödinger can't help
 # Button places
 
 ## Main menu
-BTN_NEWGAME  = (131, 250, 250, 40)
-BTN_LOADGAME = (131, 350, 250, 40)
-BTN_QUIT     = (131, 450, 250, 40)
-BTN_BACK     = (131, 450, 250, 50)
+BTN_NEWGAME  = (131, 250, 402, 82)
+BTN_LOADGAME = (131, 350, 402, 82)
+BTN_QUIT     = (131, 450, 402, 82)
+BTN_BACK     = (131, 450, 402, 82)
 
 ## Lab
 BTN_LAB_QUIT  = (16*SQUARE+PANEL-16, 0, 16, 16)
