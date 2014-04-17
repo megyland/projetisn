@@ -11,21 +11,20 @@ Répartition du travail :
 ------------------------
 **Les personnes intéressées par un de ces objectifs doivent se signaler dans le tableau.**  
 
-Objectif | Personne en charge | Etat | Commentaires
-:-------:|:------------------:|:----:|:------------:
-IA de Schrödinger | Choumat | En développement | 
-Apparence du niveau | megyland | En développement |
-Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal
-Ajout de _Expérience intéressante_ | ? | ? | Arrêt court, puis redémarrage normal
-Ajout de _Compteur de vitesse_ | ? | ? | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps
-Ajout de _Expérience ratée_ | ? | ? | Arrêt long, puis redémarrage normal
-Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt
-Placement des objets par saisie des coordonnées | ? | ? | Proposition temporaire
-Placement des objets par Drag&Drop | ? | ? |
+Objectif | Personne en charge | Etat | Commentaires | Priorité
+:-------:|:------------------:|:----:|:------------:| :------:
+IA de Schrödinger | Choumat | En développement | | !!!
+Apparence du niveau | megyland | En développement | | !
+Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
+Ajout de _Expérience intéressante_ | ? | ? | Arrêt court, puis redémarrage normal | !!
+Ajout de _Compteur de vitesse_ | ? | ? | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
+Ajout de _Expérience ratée_ | ? | ? | Arrêt long, puis redémarrage normal | !!
+Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt | !!
+Placement des objets par Drag&Drop | ? | fini |
 Ecran d'accueil | pascalcpp | Fini | Nouvelles images proposées
-Timer | ? | ? |
-Score | ? | ? |
-... | ? | ? |
+Timer | ? | ? | | !!!
+Score | ? | fini | |
+... | ? | ? | | !
 
 Travail de _megyland_ par séance :
 ---------------------------------
