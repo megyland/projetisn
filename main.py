@@ -126,11 +126,12 @@ class App :
         self.disp.blit(IMG_BACKGROUND, (0,0))
 
         # Prompt
-        prompt = utils.write("Enter the new game's name :")
-        self.disp.blit(prompt, (120, 250))
+        prompt = utils.write("Enter the new game's name :", BLACK)
+        self.disp.blit(prompt, (310, 475))
 
         # Add a textbox
-        name = Textbox.Textbox(self.disp, (120, 300), (275, 40), 10, WHITE, BLUE)
+        font = os.path.join("font", "nimbus-bold-condensed.pfb")
+        name = Textbox.Textbox(self.disp, (292, 500), (275, 40), 10, BLACK, WHITE, font, 25)
         self.textboxes.append(name)
 
         # Back to main
@@ -155,7 +156,7 @@ class App :
             filename = textbox.gettext() + ".save"
             if filename in games :
                 label = utils.write("This name already exists !", RED)
-                self.disp.blit(label, (131, 350))
+                self.disp.blit(label, (325, 550))
                 textbox.reset()
             else :
                 self.running = False
@@ -175,7 +176,7 @@ class App :
         games = [ f for f in os.listdir(CONFIG) if f.endswith(".save") ]
         if games == [] : # if there is no loaded game
             label = utils.write("There is no saved game !", RED)
-            self.disp.blit(label, (131, 400))
+            self.disp.blit(label, (325, 400))
             pygame.display.update()
             return
 
@@ -187,18 +188,21 @@ class App :
 
         # Display a button for each game
         self.btn_games = []
-        pos = (0, 300)
+        pos = (0, 400)
         i = 0
         for g in games :
-            label = utils.write(g.replace(".save", ""), WHITE, 17)
+            label = utils.write(g.replace(".save", ""), BLACK)
 
-            if (i+1)%3 == 0 :
-                pos = (350, 300+(i/3)*30, 100, 20)
+            if (i+1)%4 == 0 :
+                pos = (600, 400+(i/4)*50, 100, 25)
+            elif (i+1)%3 == 0 :
+                pos = (450, 400+(i/4)*50, 100, 25)
             elif (i+1)%2 != 0 :
-                pos = (200, 300+(i/3)*30, 100, 20)
+                pos = (300, 400+(i/4)*50, 100, 25)
             else :
-                pos = (50, 300+(i/3)*30, 100, 20)
+                pos = (150, 400+(i/4)*50, 100, 25)
 
+            pygame.draw.rect(self.disp, WHITE, pos)
             self.disp.blit(label, pos)
             self.btn_games.append(pos)
 
@@ -213,13 +217,13 @@ class App :
 
                 i = 0
                 for btn in self.btn_games :
-                    pygame.draw.rect(self.disp, BLUE, btn)
+                    pygame.draw.rect(self.disp, WHITE, btn)
 
                     games = [ f for f in os.listdir(CONFIG) if f.endswith(".save") ]
                     if utils.isinrect(pos, btn) :
-                        label = utils.write(games[i].replace(".save", ""), LIGHTBLUE, 17)
+                        label = utils.write(games[i].replace(".save", ""), GRAY, 20)
                     else :
-                        label = utils.write(games[i].replace(".save", ""), WHITE, 17)
+                        label = utils.write(games[i].replace(".save", ""), BLACK, 20)
 
                     self.disp.blit(label, btn)
                     i += 1

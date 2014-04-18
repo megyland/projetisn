@@ -56,7 +56,7 @@ class Textbox :
                     self.update()
                     
     def update(self) :
-        label = self.font.render(self.text+"|", True, self.color)
+        label = self.font.render(self.text, True, self.color)
 
         pygame.draw.rect(self.disp, self.bg, self.rect)
         self.disp.blit(label, self.pos)
