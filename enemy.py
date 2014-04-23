@@ -2,13 +2,66 @@
 
 class Enemy:
 	# Classe de Schrödinger
-	def __init__(self, dx, dy): # Méthode constructeur (s'active à l'initialisation de la classe)
+	def __init__(self, table, dir1): # Méthode constructeur (s'active à l'initialisation de la classe)
+		# table : variable de type tableau contenant le niveau
+		# dir1 : direction de départ
+		# x : abscisse
+		# y : ordonnée
+		# d : direction actuelle (haut, gauche, droite)
+		# a : accélération
+		# v : vitesse actuelle
+		self.table = table
+		for ligne in self.table :
+			self.x = self.table.find(ligne)
+			if "s" in ligne :
+				self.y = ligne.find("s")
+		
+		self.d = dir1
+		"""
 		self.x=dx
 		self.y=dy
-		self.d="right"
-		self.v=0.1
+		"""
+		self.v=0.01
 		self.a=0.003
+		
 	def move(self) : # gestion de l'IA de Schro.
+		# établissement des directions en fonction des collisions
+		for i in self.table[self.y - 1] : 
+			if " " in i && self.table[self.y - 1].find(i) == self.x :
+				self.d = "up"
+			elif self.d= "right" :
+				if self.table[self.y][self.x + 1] == " " && len(self.table[self.y]) - self.x > 0:
+					self.d = "right"
+				else :
+					self.d = "left"
+			elif self.d = "left" :
+				if self.table[self.y][self.x - 1] == " " && self.x - 1 >= 0 :
+					self.d = "left"
+				else :
+					self.d = "right"
+		
+		self.v = (1 + self.a ) * self.v # augmentation de la vitesse en fonction de l'accélération (à tester)
+		# incrémentation des coordonnées du personnage en fonction de la direction
+		if self.d = "up" :
+			# fx et fy sont les coordonnées fictives de Schrö., qui permettront la gestion de l'animation
+			# la gestion des collisions est faite à partir de x et y
+			self.fx = self.x
+			self.fy = self.y - self.v
+			if self.fy < self.y - 1 :
+				self.y -= 1
+		elif self.d = "right" :
+			self.fy = self.y
+			self.fx = self.x + self.v
+			if self.fx > self.x + 1 :
+				self.x += 1
+		elif self.d = "left" :
+			self.fy = self.y
+			self.fx = self.x - self.v
+			if self.fx < self.x - 1 :
+				self.x -= 1
+			
+	"""
+	def move_old(self) : # gestion de l'IA de Schro.
 		# x : abscisse
 		# y : ordonnée
 		# d : direction actuelle (haut, gauche, droite)
@@ -34,6 +87,7 @@ class Enemy:
 			ty = self.y + self.v
 		else :
 			print("error")
+	"""
 	
 	# Les prochaines méthodes sont les actions des pièges :
 			
@@ -43,3 +97,5 @@ class Enemy:
 			self.v = 0
 		else :
 			self.v = 0.1
+	
+	
