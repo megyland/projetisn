@@ -85,16 +85,18 @@ class App :
             accordingly.
             """
 
+            btns = (BTN_NEWGAME[0], BTN_NEWGAME[1], BTN_QUIT[0]+BTN_QUIT[2], BTN_QUIT[1]+BTN_QUIT[3])
+            pygame.draw.rect(self.disp, WHITE, btns)
+            self.disp.blit(IMG_NEWGAME, BTN_NEWGAME)
+            self.disp.blit(IMG_LOADGAME, BTN_LOADGAME)
+            self.disp.blit(IMG_QUIT, BTN_QUIT)
+
             if utils.isinrect(pos, BTN_NEWGAME) :
                 self.disp.blit(IMG_NEWGAME_HOVER, BTN_NEWGAME)
             elif utils.isinrect(pos, BTN_LOADGAME) :
                 self.disp.blit(IMG_LOADGAME_HOVER, BTN_LOADGAME)
             elif utils.isinrect(pos, BTN_QUIT) :
                 self.disp.blit(IMG_QUIT_HOVER, BTN_QUIT)
-            else :
-                self.disp.blit(IMG_NEWGAME, BTN_NEWGAME)
-                self.disp.blit(IMG_LOADGAME, BTN_LOADGAME)
-                self.disp.blit(IMG_QUIT, BTN_QUIT)
 
             pygame.display.update()
 

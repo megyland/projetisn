@@ -21,10 +21,12 @@ class Lab() :
         with open(os.path.join(CONFIG, filename), "r") as f :
             self.level = int(f.readline())
             self.money = int(f.readline())
+            dir = f.readline().strip("\n")
             self.lab = [ list(l) for l in f ]
 
         # Add Schrodinger
-        # self.schrodinger = enemy.Enemy(16,16)
+        print(dir, "truc")
+        self.schrodinger = enemy.Enemy(self.lab, dir)
 
         # Create the window
         self.disp = pygame.display.set_mode( (W, H) )
@@ -53,6 +55,15 @@ class Lab() :
                     self.onmousemove(evt.pos)
                 elif evt.type == MOUSEBUTTONUP :
                     self.onclick(evt.pos)
+
+            # Move Schrödinger
+            if self.walking :
+                x, y = self.schrodinger.move()
+                print(x)
+                print(y)
+                self.main()
+                self.disp.blit(IMG_SCHRODINGER, (x*SQUARE, y*SQUARE - 24))
+                self.clock.tick(10)
 
             self.clock.tick(40) # limit fps to 40
 
@@ -140,7 +151,7 @@ class Lab() :
 
                 elif utils.isinrect(pos, BTN_LAB_START) :
                     print("Starting Schrödinger !")
-                    # self.walkig = True
+                    self.walking = True
 
                 i = 0
                 for t in self.btn_traps :
@@ -168,7 +179,6 @@ class Lab() :
                 elif c == '=' : self.disp.blit(IMG_TABLE_M, (x,y))
                 elif c == '>' : self.disp.blit(IMG_TABLE_R, (x,y))
                 elif c == 'c' : self.disp.blit(IMG_BOX, (x,y))
-                elif c == 's' : self.disp.blit(IMG_SCHRODINGER, (x,y-24))
                 elif not c.isspace() :
                     print(c)
                     i = x/32
