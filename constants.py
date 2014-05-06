@@ -49,6 +49,10 @@ IMG_LAB_QUIT_HOVER  = pygame.image.load( os.path.join("img", "labquit_hover.png"
 IMG_LAB_START       = pygame.image.load( os.path.join("img", "start.png") )
 IMG_LAB_START_HOVER = pygame.image.load( os.path.join("img", "start_hover.png") )
 
+IMG_WIN             = pygame.image.load( os.path.join("img", "win.png") )
+IMG_LOOSE_ALIVE     = pygame.image.load( os.path.join("img", "loose_alive.png") )
+IMG_LOOSE_DEAD      = pygame.image.load( os.path.join("img", "loose_dead.png") )
+
 ## Side panel
 
 IMG_ERROR           = pygame.image.load( os.path.join("img", "error.png") )

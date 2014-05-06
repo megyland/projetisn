@@ -2,6 +2,7 @@
 
 import os, sys, shutil, pygame
 from pygame.locals import *
+from random import randint
 
 import main, utils, enemy_test # enemy
 from constants import *
@@ -21,8 +22,11 @@ class Lab() :
         with open(os.path.join(CONFIG, filename), "r") as f :
             self.level = int(f.readline())
             self.money = int(f.readline())
-            dir = f.readline().strip("\n")
             self.lab = [ list(l) for l in f ]
+
+        # Define difficulty
+        self.time = 30000 + self.level*100
+        self.speed = 40 + self.level/2
 
         # Add Schrodinger
         print(dir, "truc")
@@ -58,13 +62,63 @@ class Lab() :
 
             # Move Schrödinger
             if self.walking :
-                x, y = self.schrodinger.move()
-                print(x)
-                print(y)
-                self.main()
-                self.disp.blit(IMG_SCHRODINGER, (x*SQUARE, y*SQUARE - 24))
-                pygame.display.update()
-                self.clock.tick(2)
+                pos = self.schrodinger.move()
+
+                # If pos exists (cat not yet reached)
+                if pos :
+                    x, y = pos
+                    xprev, yprev = self.schrodinger.getprev()
+                    coordx, coordy = xprev*SQUARE, yprev*SQUARE
+
+                    # Animation between tiles
+                    for i in xrange(1, SQUARE/3) :
+                        coordx += 3*(x - xprev)
+                        coordy += 3*(y - yprev)
+
+                        self.main()
+                        self.disp.blit(IMG_SCHRODINGER, (coordx, coordy - 24))
+                        pygame.display.update()
+
+                        self.time -= self.clock.tick(self.speed)
+                else : # Cat is reached
+                    if randint(0, 1) :
+                        self.disp.blit(IMG_LOOSE_DEAD, (0,0))
+                        pygame.display.update()
+                        pygame.time.wait(5000)
+
+                        os.remove(self.file)
+
+                        self.running = False
+                        main.App()
+                    else :
+                        self.disp.blit(IMG_LOOSE_ALIVE, (0,0))
+
+                    pygame.display.update()
+                    pygame.time.wait(5000)
+
+                    self.walking = False
+                    self.main()
+
+                    self.schrodinger = enemy_test.Enemy(self.lab)
+                    self.time = 30000 + self.level*100
+
+                if self.time <= 0 :
+                    self.level += 1
+                    self.money += 1000 + self.level*100
+                    self.time = 30000 + self.level*100
+                    self.speed = 40 + self.level*2
+
+                    self.save()
+
+                    self.disp.blit(IMG_WIN, (0,0))
+                    pygame.display.update()
+                    pygame.time.wait(3000)
+
+                    self.walking = False
+                    self.updatepanel()
+                    self.main()
+                    self.schrodinger = enemy_test.Enemy(self.lab)
+
             else :
                 self.clock.tick(40) # limit fps to 40
 
@@ -143,10 +197,7 @@ class Lab() :
             if not self.walking :
                 if utils.isinrect(pos, BTN_LAB_QUIT) :
                     # Save the game and back to main menu
-                    with open(self.file, "w") as f :
-                        f.write(str(self.level) + "\n")
-                        f.write(str(self.money) + "\n")
-                        for l in self.lab : f.write(''.join(l))
+                    self.save()
                     self.running = False
                     main.App()
 
@@ -162,6 +213,12 @@ class Lab() :
 
         self.onmousemove = onmousemove
         self.onclick = onclick
+
+    def save(self) :
+        with open(self.file, "w") as f :
+            f.write(str(self.level) + "\n")
+            f.write(str(self.money) + "\n")
+            for l in self.lab : f.write(''.join(l))
 
     def main(self) :
         """
@@ -180,7 +237,8 @@ class Lab() :
                 elif c == '=' : self.disp.blit(IMG_TABLE_M, (x,y))
                 elif c == '>' : self.disp.blit(IMG_TABLE_R, (x,y))
                 elif c == 'c' : self.disp.blit(IMG_BOX, (x,y))
-                elif not c.isspace() and c != 's' :
+                elif c == '4' : self.disp.blit(IMG_FIRE, (x,y))
+                elif c in ['.', ';', '?', '!', '*'] :
                     print(c)
                     i = x/32
                     if i <= 0 or not l[i-1] in ['<', '=', '>'] :
@@ -195,7 +253,8 @@ class Lab() :
                     elif c == '?' : self.disp.blit(IMG_INTERESTING, (x,y))
                     elif c == '!' : self.disp.blit(IMG_FAILED, (x,y))
                     elif c == '*' : self.disp.blit(IMG_STARTFIRE, (x,y))
-                    elif c == '4' : self.disp.blit(IMG_FIRE, (x,y))
+
+
                 x += 32
             y += 32
 

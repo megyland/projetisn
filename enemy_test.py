@@ -31,3 +31,7 @@ class Enemy :
                 self.prev = self.pos
                 self.pos = i
                 return self.pos
+            elif isintable(i, self.table) and self.table[i[1]][i[0]] == 'c' :
+                return False
+
+    def getprev(self) : return self.prev
