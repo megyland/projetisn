@@ -3,7 +3,7 @@
 import os, sys, shutil, pygame
 from pygame.locals import *
 
-import main, utils, enemy
+import main, utils, enemy_test # enemy
 from constants import *
 
 # Dimensions
@@ -26,7 +26,7 @@ class Lab() :
 
         # Add Schrodinger
         print(dir, "truc")
-        self.schrodinger = enemy.Enemy(self.lab, dir)
+        self.schrodinger = enemy_test.Enemy(self.lab) #, dir)
 
         # Create the window
         self.disp = pygame.display.set_mode( (W, H) )
@@ -63,9 +63,10 @@ class Lab() :
                 print(y)
                 self.main()
                 self.disp.blit(IMG_SCHRODINGER, (x*SQUARE, y*SQUARE - 24))
-                self.clock.tick(10)
-
-            self.clock.tick(40) # limit fps to 40
+                pygame.display.update()
+                self.clock.tick(2)
+            else :
+                self.clock.tick(40) # limit fps to 40
 
     def panel(self) :
         """
@@ -111,7 +112,7 @@ class Lab() :
         self.disp.blit(money, (x+200, 0))
 
         pygame.display.update()
-    
+
     def selectmode(self) :
 
         def onmousemove(pos) :
@@ -179,7 +180,7 @@ class Lab() :
                 elif c == '=' : self.disp.blit(IMG_TABLE_M, (x,y))
                 elif c == '>' : self.disp.blit(IMG_TABLE_R, (x,y))
                 elif c == 'c' : self.disp.blit(IMG_BOX, (x,y))
-                elif not c.isspace() :
+                elif not c.isspace() and c != 's' :
                     print(c)
                     i = x/32
                     if i <= 0 or not l[i-1] in ['<', '=', '>'] :
