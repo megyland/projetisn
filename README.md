@@ -13,7 +13,7 @@ Répartition du travail :
 
 Objectif | Personne en charge | Etat | Commentaires | Priorité
 :-------:|:------------------:|:----:|:------------:| :------:
-IA de Schrödinger | Choumat | En développement | | !!!
+IA de Schrödinger | Choumat | En développement | Le personnage ne se déplace pas ; nouvelle proposition de pascalcpp ; il manque la gestion des embranchements | !!!
 Apparence du niveau | megyland | En développement | | !
 Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
 Ajout de _Expérience intéressante_ | ? | ? | Arrêt court, puis redémarrage normal | !!
@@ -48,6 +48,9 @@ Travail de _Choumat_ par séance :
 * __9/04__ :
  - Fichier _entity.py_ renommé _enemy.py_
  - Ajout de la méthode d'_Enemy_ nommée *correct_error()* : action du piège _Erreur de calcul_
+
+* __23/04__ :
+ - Proposition d'une IA de Schrödinger. _Bug: Après intégration au jeu, le personnage est immobile._
 
 Travail de _pascalcpp_ par séance :
 ----------------------------------
