@@ -115,8 +115,8 @@ class Lab() :
                     pygame.time.wait(3000)
 
                     self.walking = False
-                    self.updatepanel()
                     self.main()
+                    self.updatepanel()
                     self.schrodinger = enemy_test.Enemy(self.lab)
 
             else :
@@ -155,9 +155,9 @@ class Lab() :
         self.updatepanel()
 
     def updatepanel(self) :
-        x = 16*SQUARE+10
+        x = 16*SQUARE
 
-        pygame.draw.rect(self.disp, WHITE, (x, 0, 250, 16))
+        pygame.draw.rect(self.disp, WHITE, (x, 0, 15*SQUARE+PANEL, 16))
 
         level = utils.write("Level : " + str(self.level), GRAY, 13)
         money = utils.write("Money : " + str(self.money), GRAY, 13)
@@ -239,7 +239,6 @@ class Lab() :
                 elif c == 'c' : self.disp.blit(IMG_BOX, (x,y))
                 elif c == '4' : self.disp.blit(IMG_FIRE, (x,y))
                 elif c in ['.', ';', '?', '!', '*'] :
-                    print(c)
                     i = x/32
                     if i <= 0 or not l[i-1] in ['<', '=', '>'] :
                         self.disp.blit(IMG_TABLE_L, (x,y))
