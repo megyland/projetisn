@@ -52,6 +52,9 @@ Travail de _Choumat_ par séance :
 * __23/04__ :
  - Proposition d'une IA de Schrödinger. _Bug: Après intégration au jeu, le personnage est immobile._
 
+* __21/05__ :
+ - Création de l'effet des pièges, il faudra probablement réajuster les durées des effets, et il manque l'activation du piège.
+
 Travail de _pascalcpp_ par séance :
 ----------------------------------
 
