@@ -11,7 +11,7 @@ class Enemy :
 
         self.table = table
         self.unmoving = 0
-        self.disturbed = 0
+        self.disturbed = False
 
         i = 0
         for ligne in table :
@@ -24,9 +24,6 @@ class Enemy :
         if self.unmoving > 0 :
             self.unmoving = self.unmoving - 1
         else :
-            """if self.disturbed > 0 :
-                self.disturbed = self.disturbed - 1
-            """
             directions = []
             for i in [-1, 0, 1] :
                 for j in [-1, 0, 1] :
@@ -55,7 +52,7 @@ class Enemy :
         elif trap == "?" : # Exp. intéressante => Immobilise un certain temps (court)
             self.unmoving = 1
         elif trap == "." : # 0) Exp. intéressante => Immobilise un certain temps (court)
-            self.disturbed = 10
+            self.disturbed = True
         
         
         
