@@ -35,20 +35,27 @@ class Enemy :
 
             for i in directions :
 
-                if isintable(i, self.table) and self.table[i[1]][i[0]].isspace() and i != self.prev :
+                if isintable(i, self.table) and self.table[i[1]][i[0]].isspace() and (i != self.prev or self.disturbed) :
                     self.prev = self.pos
                     self.pos = i
+                    self.setstatus(self.table[ self.pos[0] ][ self.pos[1]-1 ])
                     return self.pos
                 elif isintable(i, self.table) and self.table[i[1]][i[0]] == 'c' :
                     return False
-        
 
     def getprev(self) : return self.prev
 
     def setstatus(self,trap) :
-        if trap == 1 : # 1) Erreur de calcul => Immobilise un certain temps (durée moyenne)
-            self.unmoving = 150
-        elif trap == 2 : # 2) Exp. ratée => Immobilise un certain temps (long)
-            self.unmoving = 200
-        else : # 0) Exp. intéressante => Immobilise un certain temps (court)
-            self.unmoving = 100
+        if trap == ";" : # Erreur de calcul => Immobilise un certain temps (durée moyenne)
+            self.unmoving = 2
+        elif trap == "!" : # Exp. ratée => Immobilise un certain temps (long)
+            self.unmoving = 3
+        elif trap == "*" or trap == "4" : # Exp. intéressante => Immobilise un certain temps (court)
+            self.unmoving = 1
+        elif trap == "?" : # Exp. intéressante => Immobilise un certain temps (court)
+            self.unmoving = 1
+        elif trap == "." : # 0) Exp. intéressante => Immobilise un certain temps (court)
+            self.disturbed = 10
+        
+        
+        
