@@ -21,8 +21,10 @@ class Enemy :
             i += 1
 
     def move(self) :
-        if self.unmoving > 0 :
-            self.unmoving = self.unmoving - 1
+        if self.unmoving :
+            self.unmoving -= 1
+            self.prev = self.pos
+            return self.pos
         else :
             directions = []
             for i in [-1, 0, 1] :
@@ -35,7 +37,7 @@ class Enemy :
                 if isintable(i, self.table) and self.table[i[1]][i[0]].isspace() and (i != self.prev or self.disturbed) :
                     self.prev = self.pos
                     self.pos = i
-                    self.setstatus(self.table[ self.pos[0] ][ self.pos[1]-1 ])
+                    self.setstatus(self.table[i[1]-1][i[0]])
                     return self.pos
                 elif isintable(i, self.table) and self.table[i[1]][i[0]] == 'c' :
                     return False
@@ -53,6 +55,3 @@ class Enemy :
             self.unmoving = 1
         elif trap == "." : # 0) Exp. intéressante => Immobilise un certain temps (court)
             self.disturbed = True
-        
-        
-        

@@ -63,11 +63,16 @@ class Lab() :
             # Move Schrödinger
             if self.walking :
                 pos = self.schrodinger.move()
+                prev = self.schrodinger.getprev()
+
+                if pos == prev:
+                    print("Stop")
+                    pygame.time.wait(1000)
 
                 # If pos exists (cat not yet reached)
                 if pos :
                     x, y = pos
-                    xprev, yprev = self.schrodinger.getprev()
+                    xprev, yprev = prev
                     coordx, coordy = xprev*SQUARE, yprev*SQUARE
 
                     # Animation between tiles
@@ -76,7 +81,12 @@ class Lab() :
                         coordy += 3*(y - yprev)
 
                         self.main()
-                        self.disp.blit(IMG_SCHRODINGER, (coordx, coordy - 24))
+                        if x - xprev == 0 :
+                            self.disp.blit(IMG_SCHRODINGER, (coordx, coordy))
+                        elif x - xprev <= 0 :
+                            self.disp.blit(IMG_SCHRODINGER_L, (coordx, coordy))
+                        elif x - xprev >= 0 :
+                            self.disp.blit(IMG_SCHRODINGER_R, (coordx, coordy))
                         pygame.display.update()
 
                         self.time -= self.clock.tick(self.speed)
@@ -226,7 +236,8 @@ class Lab() :
         """
 
         # Floor :
-        self.disp.blit(IMG_FLOOR, (0,0))
+        # self.disp.blit(IMG_FLOOR, (0,0))
+        pygame.draw.rect(self.disp, LIGHTGRAY, (0, 0, 512, 512))
 
         # Other elements :
         y = 0

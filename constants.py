@@ -17,6 +17,7 @@ LIGHTBLUE = (0, 0, 118)
 RED       = (200, 0, 0)
 GREEN     = (0, 255, 0)
 GRAY      = (150, 150, 150)
+LIGHTGRAY = (230, 230, 230)
 WHITE     = (255, 255, 255)
 BLACK     = (0,0,0)
 
@@ -43,6 +44,8 @@ IMG_TABLE_R         = pygame.image.load( os.path.join("img", "tableR.png") )
 
 IMG_BOX             = pygame.image.load( os.path.join("img", "box.png") )
 IMG_SCHRODINGER     = pygame.image.load( os.path.join("img", "Schrodinger.png") )
+IMG_SCHRODINGER_L   = pygame.image.load( os.path.join("img", "Schrodinger_Left.png") )
+IMG_SCHRODINGER_R   = pygame.image.load( os.path.join("img", "Schrodinger_Right.png") )
 
 IMG_LAB_QUIT        = pygame.image.load( os.path.join("img", "labquit.png") )
 IMG_LAB_QUIT_HOVER  = pygame.image.load( os.path.join("img", "labquit_hover.png") )
