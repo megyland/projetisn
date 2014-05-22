@@ -8,7 +8,7 @@ CONFIG = os.path.join( os.path.expanduser("~"), ".config", "schrodinger" )
 # Dimensions
 
 SQUARE = 32
-PANEL  = 350 # width of the panel
+PANEL  = 450 # width of the panel
 
 # Colours
 
@@ -31,23 +31,23 @@ IMG_LOADGAME        = pygame.image.load( os.path.join("img", "buttonLoadGame.png
 IMG_LOADGAME_HOVER  = pygame.image.load( os.path.join("img", "buttonLoadGameHover.png") )
 IMG_QUIT            = pygame.image.load( os.path.join("img", "buttonQuit.png") )
 IMG_QUIT_HOVER      = pygame.image.load( os.path.join("img", "buttonQuitHover.png") )
-IMG_BACK            = pygame.image.load( os.path.join("img", "back.png") )
-IMG_BACK_HOVER      = pygame.image.load( os.path.join("img", "back_hover.png") )
+IMG_BACK            = pygame.image.load( os.path.join("img", "buttonBack.png") )
+IMG_BACK_HOVER      = pygame.image.load( os.path.join("img", "buttonBackHover.png") )
 
 ## Lab
 IMG_FLOOR           = pygame.image.load( os.path.join("img", "lab_floor.png") )
 
-IMG_TABLE_L         = pygame.image.load( os.path.join("img", "table_l.png") )
-IMG_TABLE_M         = pygame.image.load( os.path.join("img", "table_m.png") )
-IMG_TABLE_R         = pygame.image.load( os.path.join("img", "table_r.png") )
+IMG_TABLE_L         = pygame.image.load( os.path.join("img", "tableL.png") )
+IMG_TABLE_M         = pygame.image.load( os.path.join("img", "tableM.png") )
+IMG_TABLE_R         = pygame.image.load( os.path.join("img", "tableR.png") )
 
 IMG_BOX             = pygame.image.load( os.path.join("img", "box.png") )
-IMG_SCHRODINGER     = pygame.image.load( os.path.join("img", "schrodinger.png") )
+IMG_SCHRODINGER     = pygame.image.load( os.path.join("img", "Schrodinger.png") )
 
 IMG_LAB_QUIT        = pygame.image.load( os.path.join("img", "labquit.png") )
 IMG_LAB_QUIT_HOVER  = pygame.image.load( os.path.join("img", "labquit_hover.png") )
-IMG_LAB_START       = pygame.image.load( os.path.join("img", "start.png") )
-IMG_LAB_START_HOVER = pygame.image.load( os.path.join("img", "start_hover.png") )
+IMG_LAB_START       = pygame.image.load( os.path.join("img", "buttonStart.png") )
+IMG_LAB_START_HOVER = pygame.image.load( os.path.join("img", "buttonStartHover.png") )
 
 IMG_WIN             = pygame.image.load( os.path.join("img", "win.png") )
 IMG_LOOSE_ALIVE     = pygame.image.load( os.path.join("img", "loose_alive.png") )
@@ -81,4 +81,4 @@ BTN_BACK     = (219, 676, 402, 82)
 
 ## Lab
 BTN_LAB_QUIT  = (16*SQUARE+PANEL-16, 0, 16, 16)
-BTN_LAB_START = (16*SQUARE+25, 16*SQUARE-70, 300, 64)
+BTN_LAB_START = (16*SQUARE+25, 16*SQUARE-85, 300, 64)
