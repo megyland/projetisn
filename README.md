@@ -17,14 +17,13 @@ IA de Schrödinger | Choumat | En développement | Le personnage ne se déplace 
 Apparence du niveau | megyland | En développement | | !
 Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
 Ajout de _Expérience intéressante_ | Choumat | En test | Arrêt court, puis redémarrage normal | !!
-Ajout de _Compteur de vitesse_ | ? | ? | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
+Ajout de _Compteur de vitesse_ | Choumat | En test | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
 Ajout de _Expérience ratée_ | Choumat | En test | Arrêt long, puis redémarrage normal | !!
 Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt | !!
 Placement des objets | pascalcpp | Fini |
 Ecran d'accueil | pascalcpp | Fini | Nouvelles images proposées
 Affichage du timer | ? | ? | | !!!
 Score | ? | Fini | Sert de monnaie d'échange pour les objets |
-Augmentation progressive du score | ? | ? | | !
 ... | ? | ? | | !
 
 Travail de _megyland_ par séance :
