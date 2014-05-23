@@ -19,7 +19,7 @@ W, H         = 840, 840
 # Play music
 pygame.mixer.music.load( os.path.join("sound", "music.ogg") )
 pygame.mixer.music.set_volume(0.2)
-# pygame.mixer.music.play(-1) # play forever
+pygame.mixer.music.play(-1) # play forever
 
 class App :
 
