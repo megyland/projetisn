@@ -132,8 +132,8 @@ class App :
         self.disp.blit(prompt, (310, 475))
 
         # Add a textbox
-        font = os.path.join("font", "nimbus-bold-condensed.pfb")
-        name = Textbox.Textbox(self.disp, (292, 500), (275, 40), 10, BLACK, WHITE, font, 25)
+        font = os.path.join("font", "dk-snemand.otf")
+        name = Textbox.Textbox(self.disp, (292, 500), (275, 40), 10, BLACK, WHITE, font, 35)
         self.textboxes.append(name)
 
         # Back to main

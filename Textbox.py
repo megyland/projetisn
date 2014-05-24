@@ -51,7 +51,6 @@ class Textbox :
                 islowerchar = evt.key >= 97 and evt.key <= 122
 
                 if isnumber or isupperchar or islowerchar :
-                # if evt.key < 127 :
                     self.text += evt.unicode
                     self.update()
                     
