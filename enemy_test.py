@@ -22,8 +22,7 @@ class Enemy :
 
     def move(self) :
         if self.unmoving :
-            self.unmoving -= 1
-            self.prev = self.pos
+            # self.unmoving -= 1
             return self.pos
         else :
             directions = []
@@ -43,6 +42,13 @@ class Enemy :
                     return False
 
     def getprev(self) : return self.prev
+
+    def getunmoving(self) :
+        if self.unmoving :
+            self.unmoving -= 1
+            return True
+
+        return False
 
     def setstatus(self,trap) :
         if trap == ";" : # Erreur de calcul => Immobilise un certain temps (durée moyenne)

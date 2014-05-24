@@ -65,12 +65,7 @@ class Lab() :
                 pos = self.schrodinger.move()
                 prev = self.schrodinger.getprev()
 
-                if pos == prev:
-                    print("Stop")
-                    pygame.time.wait(1000)
-
-                # If pos exists (cat not yet reached)
-                if pos :
+                if pos : # pos exists
                     x, y = pos
                     xprev, yprev = prev
                     coordx, coordy = xprev*SQUARE, yprev*SQUARE
@@ -111,6 +106,9 @@ class Lab() :
 
                     self.schrodinger = enemy_test.Enemy(self.lab)
                     self.time = 30000 + self.level*100
+
+                if self.schrodinger.getunmoving() :
+                    pygame.time.wait(1000)
 
                 if self.time <= 0 :
                     self.level += 1
