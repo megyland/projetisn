@@ -76,8 +76,8 @@ TRAPS = [ (IMG_INTERESTING, u"Interesting experiment", u"Schrödinger can't help
 
 ## Main menu
 BTN_NEWGAME  = (219, 430, 402, 82)
-BTN_LOADGAME = (219, 512, 402, 82)
-BTN_QUIT     = (219, 594, 402, 82)
+BTN_LOADGAME = (219, 510, 402, 82)
+BTN_QUIT     = (219, 590, 402, 82)
 BTN_BACK     = (219, 676, 402, 82)
 
 ## Lab
