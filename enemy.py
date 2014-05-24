@@ -1,106 +1,70 @@
 # -*-coding:utf-8-*-
 
-class Enemy:
-        # Classe de Schrödinger
-        def __init__(self, table, dir1): # Méthode constructeur (s'active à l'initialisation de la classe)
-                # table : variable de type tableau contenant le niveau
-                # dir1 : direction de départ
-                # x : abscisse
-                # y : ordonnée
-                # d : direction actuelle (haut, gauche, droite)
-                # a : accélération
-                # v : vitesse actuelle
-                self.table = table
-                i = 0
-                for ligne in self.table :
-                        if "s" in ligne :
-                                self.x = ligne.index("s")
-                                self.y = i
-                        i += 1
-                
-                self.d = dir1
-                """
-                self.x=dx
-                self.y=dy
-                """
-                self.v=0.01
-                self.a=0.003
-                
-        def move(self) : # gestion de l'IA de Schro.
-                # établissement des directions en fonction des collisions
-                for i in self.table[self.y - 1] : 
-                        if " " in i and self.table[self.y - 1][self.x] == " " :
-                                self.d = "up"
-                        elif self.d == "right" :
-                                if len(self.table[self.y]) - self.x > 1 and self.table[self.y][self.x + 1] == " " :
-                                        self.d = "right"
-                                else :
-                                        self.d = "left"
-                        elif self.d == "left" :
-                                if self.x - 1 >= 0 and  self.table[self.y][self.x - 1] == " " :
-                                        self.d = "left"
-                                else :
-                                        self.d = "right"
-                
-                self.v = (1 + self.a ) * self.v # augmentation de la vitesse en fonction de l'accélération (à tester)
-                # incrémentation des coordonnées du personnage en fonction de la direction
+from constants import *
+from random import choice, randint
 
-                if self.d == "up" :
-                        # fx et fy sont les coordonnées fictives de Schrö., qui permettront la gestion de l'animation
-                        # la gestion des collisions est faite à partir de x et y
-                        self.fx = self.x
-                        self.fy = self.y - self.v
-                        if self.fy <= self.y - 1 :
-                                self.y -= 1
-                elif self.d == "right" :
-                        self.fy = self.y
-                        self.fx = self.x + self.v
-                        if self.fx >= self.x + 1 :
-                                self.x += 1
-                elif self.d == "left" :
-                        self.fy = self.y
-                        self.fx = self.x - self.v
-                        if self.fx <= self.x - 1 :
-                                self.x -= 1
+def isintable(coord, table) :
+    return coord[0] >= 0 and coord[1] >= 0 and coord[0] < len(table[0]) and coord[1] < len(table)
 
-                return (self.fx, self.fy)
-                        
-        """
-        def move_old(self) : # gestion de l'IA de Schro.
-                # x : abscisse
-                # y : ordonnée
-                # d : direction actuelle (haut, gauche, droite)
-                # a : accélération
-                # v : vitesse actuelle
-                self.v = (1 + self.a ) * self.v
+class Enemy :
 
-                if self.d == "left" :
-                        tx = self.x - self.v
-                        if tx <= 0 : # changement de direction lorsque Schro. arrive en bout de ligne (par la gauche)
-                                self.x = 0
-                                self.d = "up"
-                        else :
-                                self.x = tx
-                elif self.d == "right" :
-                        tx = self.x + self.v
-                        if tx >= 100 : # changement de direction lorsque Schro. arrive en bout de ligne (par la droite)
-                                self.x = 100
-                                self.d = "up"
-                        else :
-                                self.x = tx
-                elif self.d == "up" :
-                        ty = self.y + self.v
-                else :
-                        print("error")
-        """
-        
-        # Les prochaines méthodes sont les actions des pièges :
-                        
-        def correct_error(time) : # Piège "Erreur de calcul"
-                if time != 0 :
-                        self.tempV = self.v
-                        self.v = 0
-                else :
-                        self.v = 0.1
-        
-        
+    def __init__(self, table) :
+
+        self.table = table
+        self.unmoving = 0
+        self.disturbed = False
+
+        i = 0
+        for ligne in table :
+            if 's' in ligne :
+                self.pos = (ligne.index('s'), i)
+                self.prev = self.pos
+            i += 1
+
+    def move(self) :
+        if self.unmoving :
+            # self.unmoving -= 1
+            return self.pos
+        else :
+            directions = []
+            for i in [-1, 0, 1] :
+                for j in [-1, 0, 1] :
+                    if abs(i) != abs(j) :
+                        directions.append( (self.pos[0]+i, self.pos[1]+j) )
+
+            remaining = []
+            for i in directions :
+                if isintable(i, self.table) and self.table[i[1]][i[0]].isspace() and i != self.prev :
+                    newpos = i
+                    if self.disturbed and randint(0, 10) == 5 :
+                        newpos = self.prev
+
+                    self.prev = self.pos
+                    self.pos = newpos
+                    self.setstatus( self.table[ self.pos[1]-1 ][ self.pos[0] ] )
+
+                    return self.pos
+
+                elif isintable(i, self.table) and self.table[ self.pos[1] ][ self.pos[0] ] == 'c':
+                    return False
+
+    def getprev(self) : return self.prev
+
+    def getunmoving(self) :
+        if self.unmoving :
+            self.unmoving -= 1
+            return True
+
+        return False
+
+    def setstatus(self,trap) :
+        if trap == ";" : # Erreur de calcul => Immobilise un certain temps (durée moyenne)
+            self.unmoving = 2
+        elif trap == "!" : # Exp. ratée => Immobilise un certain temps (long)
+            self.unmoving = 3
+        elif trap == "*" or trap == "4" : # Exp. intéressante => Immobilise un certain temps (court)
+            self.unmoving = 1
+        elif trap == "?" : # Exp. intéressante => Immobilise un certain temps (court)
+            self.unmoving = 1
+        elif trap == "." : # 0) Exp. intéressante => Immobilise un certain temps (court)
+            self.disturbed = True

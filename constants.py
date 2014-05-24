@@ -36,8 +36,6 @@ IMG_BACK            = pygame.image.load( os.path.join("img", "buttonBack.png") )
 IMG_BACK_HOVER      = pygame.image.load( os.path.join("img", "buttonBackHover.png") )
 
 ## Lab
-IMG_FLOOR           = pygame.image.load( os.path.join("img", "lab_floor.png") )
-
 IMG_TABLE_L         = pygame.image.load( os.path.join("img", "tableL.png") )
 IMG_TABLE_M         = pygame.image.load( os.path.join("img", "tableM.png") )
 IMG_TABLE_R         = pygame.image.load( os.path.join("img", "tableR.png") )
@@ -71,7 +69,7 @@ IMG_FIRE            = pygame.image.load( os.path.join("img", "fire.png") )
 TRAPS = [ (IMG_INTERESTING, u"Interesting experiment", u"Schrödinger can't help but stop to watch it", 1000, '?'),
           (IMG_ERROR, u"Error", u"Schrödinger made a mistake, he must stop and correct it", 2000, ';'),
           (IMG_FAILED, u"Failed experiment", u"An experiment went wrong, Schrödinger stops to clean it up", 5000, '!'),
-          (IMG_SPEEDOMETER, u"Speedometer", u"Tells Schrödinger his exact speed so that he no longer knows where he is", 10000, '.'),
+          (IMG_SPEEDOMETER, u"Speedometer", u"Tells Schrödinger his exact speed so that he no longer knows where he is", 20000, '.'),
           (IMG_STARTFIRE, u"Starting fire", u"An experiment went awfuly wrong and sets fire to the lab. Schrödinger must extinguish every flame, but you have to make sure the fire doesn't reach the kitten", 50000, '*') ]
 
 # Button places

@@ -4,7 +4,7 @@ import os, sys, shutil, pygame
 from pygame.locals import *
 from random import randint
 
-import main, utils, enemy_test # enemy
+import main, utils, enemy
 from constants import *
 
 # Dimensions
@@ -30,7 +30,7 @@ class Lab() :
 
         # Add Schrodinger
         print(dir, "truc")
-        self.schrodinger = enemy_test.Enemy(self.lab) #, dir)
+        self.schrodinger = enemy.Enemy(self.lab) #, dir)
 
         # Create the window
         self.disp = pygame.display.set_mode( (W, H) )
@@ -104,7 +104,7 @@ class Lab() :
                     self.walking = False
                     self.main()
 
-                    self.schrodinger = enemy_test.Enemy(self.lab)
+                    self.schrodinger = enemy.Enemy(self.lab)
                     self.time = 30000 + self.level*100
 
                 if self.schrodinger.getunmoving() :
@@ -112,7 +112,7 @@ class Lab() :
 
                 if self.time <= 0 :
                     self.level += 1
-                    self.money += 1000 + self.level*100
+                    self.money += 1000 + self.level*500
                     self.time = 30000 + self.level*100
                     self.speed = 40 + self.level*2
 
@@ -125,7 +125,7 @@ class Lab() :
                     self.walking = False
                     self.main()
                     self.updatepanel()
-                    self.schrodinger = enemy_test.Enemy(self.lab)
+                    self.schrodinger = enemy.Enemy(self.lab)
 
             else :
                 self.clock.tick(40) # limit fps to 40
