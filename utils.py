@@ -18,7 +18,7 @@ def write(text, color=(255, 255, 255), size=20) :
     """
 
     # font = pygame.font.get_default_font()
-    font = os.path.join("font", "nimbus-bold-condensed.pfb")
+    font = os.path.join("font", "dk-snemand.otf")
     renderer = pygame.font.Font(font, size)
 
     return renderer.render(text, True, color)
