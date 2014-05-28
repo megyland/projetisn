@@ -45,8 +45,8 @@ IMG_SCHRODINGER     = pygame.image.load( os.path.join("img", "Schrodinger.png") 
 IMG_SCHRODINGER_L   = pygame.image.load( os.path.join("img", "Schrodinger_Left.png") )
 IMG_SCHRODINGER_R   = pygame.image.load( os.path.join("img", "Schrodinger_Right.png") )
 
-IMG_LAB_QUIT        = pygame.image.load( os.path.join("img", "labquit.png") )
-IMG_LAB_QUIT_HOVER  = pygame.image.load( os.path.join("img", "labquit_hover.png") )
+IMG_LAB_QUIT        = pygame.image.load( os.path.join("img", "buttonExit.png") )
+IMG_LAB_QUIT_HOVER  = pygame.image.load( os.path.join("img", "buttonExitHover.png") )
 IMG_LAB_START       = pygame.image.load( os.path.join("img", "buttonStart.png") )
 IMG_LAB_START_HOVER = pygame.image.load( os.path.join("img", "buttonStartHover.png") )
 
