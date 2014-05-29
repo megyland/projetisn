@@ -157,6 +157,8 @@ class Lab() :
 
             y += 75
 
+        self.disp.blit(IMG_LEVEL, (16*SQUARE, 0, 217, 16))
+        self.disp.blit(IMG_MONEY, (16*SQUARE+217, 0, 217, 16))
         self.disp.blit(IMG_LAB_QUIT, BTN_LAB_QUIT)
         self.disp.blit(IMG_LAB_START, BTN_LAB_START)
 
@@ -165,13 +167,13 @@ class Lab() :
     def updatepanel(self) :
         x = 16*SQUARE
 
-        pygame.draw.rect(self.disp, WHITE, (x, 0, 15*SQUARE+PANEL, 16))
+        #pygame.draw.rect(self.disp, WHITE, (x, 0, 15*SQUARE+PANEL, 16))
 
-        level = utils.write("Level : " + str(self.level), GRAY, 13)
-        money = utils.write("Money : " + str(self.money), GRAY, 13)
+        level = utils.write("Level : " + str(self.level), WHITE, 13)
+        money = utils.write("Money : " + str(self.money), WHITE, 13)
 
-        self.disp.blit(level, (x, 0))
-        self.disp.blit(money, (x+200, 0))
+        self.disp.blit(level, (x+16, 0))
+        self.disp.blit(money, (x+233, 0))
 
         pygame.display.update()
 

@@ -62,6 +62,9 @@ IMG_FAILED          = pygame.image.load( os.path.join("img", "failed.png") )
 IMG_SPEEDOMETER     = pygame.image.load( os.path.join("img", "speedometer.png") )
 IMG_STARTFIRE       = pygame.image.load( os.path.join("img", "startfire.png") )
 IMG_FIRE            = pygame.image.load( os.path.join("img", "fire.png") )
+IMG_LEVEL			= pygame.image.load( os.path.join("img", "levelSection.png") )
+IMG_MONEY			= pygame.image.load( os.path.join("img", "moneySection.png") )
+IMG_SIDEPANEL_BG	= pygame.image.load( os.path.join("img", "sidepanelBackground.png") )
 
 # Traps
 ## Image, name, description, price
