@@ -168,8 +168,6 @@ class Lab() :
     def updatepanel(self) :
         x = 16*SQUARE
 
-        #pygame.draw.rect(self.disp, WHITE, (x, 0, 15*SQUARE+PANEL, 16))
-
         level = utils.write("Level : " + str(self.level), WHITE, 13)
         money = utils.write("Money : " + str(self.money), WHITE, 13)
 
