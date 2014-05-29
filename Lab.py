@@ -135,9 +135,10 @@ class Lab() :
         Set up the side panel
         """
 
+        self.disp.blit(IMG_SIDEPANEL_BG, (16*SQUARE, 16, 450, 496))
         self.btn_traps = []
-        x = 16*SQUARE+10
-        y = 16
+        x = 16*SQUARE+65
+        y = 20
         for i in TRAPS :
             self.disp.blit(i[0], (x,y))
 
@@ -145,8 +146,8 @@ class Lab() :
             price = utils.write(str(i[3]), GRAY)
             lines = utils.formattext(i[2], 35, BLACK, 15)
 
-            self.disp.blit(name, (x+40,y))
-            self.disp.blit(price, (x+275, y))
+            self.disp.blit(name, (x+40,y+2))
+            self.disp.blit(price, (x+275, y+2))
 
             i = 20
             for l in lines :
