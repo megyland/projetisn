@@ -26,7 +26,7 @@ class Lab() :
 
         # Define difficulty
         self.time = 30000 + self.level*100
-        self.speed = 40 + self.level/2
+        self.speed = 40 + self.level*2
 
         # Add Schrodinger
         print(dir, "truc")
@@ -65,6 +65,8 @@ class Lab() :
                 pos = self.schrodinger.move()
                 prev = self.schrodinger.getprev()
 
+                if self.schrodinger.getdisturbed() : self.speed = 40 + self.level/10
+
                 if pos : # pos exists
                     x, y = pos
                     xprev, yprev = prev
@@ -77,11 +79,11 @@ class Lab() :
 
                         self.main()
                         if x - xprev == 0 :
-                            self.disp.blit(IMG_SCHRODINGER, (coordx, coordy))
+                            self.disp.blit(IMG_SCHRODINGER, (coordx, coordy-15))
                         elif x - xprev <= 0 :
-                            self.disp.blit(IMG_SCHRODINGER_L, (coordx, coordy))
+                            self.disp.blit(IMG_SCHRODINGER_L, (coordx, coordy-15))
                         elif x - xprev >= 0 :
-                            self.disp.blit(IMG_SCHRODINGER_R, (coordx, coordy))
+                            self.disp.blit(IMG_SCHRODINGER_R, (coordx, coordy-15))
                         pygame.display.update()
 
                         self.time -= self.clock.tick(self.speed)
@@ -99,7 +101,7 @@ class Lab() :
                         self.disp.blit(IMG_LOOSE_ALIVE, (0,0))
 
                     pygame.display.update()
-                    pygame.time.wait(5000)
+                    pygame.time.wait(7000)
 
                     self.walking = False
                     self.main()
@@ -107,12 +109,13 @@ class Lab() :
                     self.schrodinger = enemy.Enemy(self.lab)
                     self.time = 30000 + self.level*100
 
-                if self.schrodinger.getunmoving() :
-                    pygame.time.wait(1000)
+                unmoving = self.schrodinger.getunmoving()
+                if unmoving :
+                    pygame.time.wait(1000*unmoving)
 
                 if self.time <= 0 :
                     self.level += 1
-                    self.money += 1000 + self.level*500
+                    self.money += 2000 + self.level*500
                     self.time = 30000 + self.level*100
                     self.speed = 40 + self.level*2
 
@@ -158,8 +161,8 @@ class Lab() :
 
             y += 75
 
-        self.disp.blit(IMG_LEVEL, (16*SQUARE, 0, 217, 16))
-        self.disp.blit(IMG_MONEY, (16*SQUARE+217, 0, 217, 16))
+        self.disp.blit(IMG_LEVEL, RECT_LEVEL)
+        self.disp.blit(IMG_MONEY, RECT_MONEY)
         self.disp.blit(IMG_LAB_QUIT, BTN_LAB_QUIT)
         self.disp.blit(IMG_LAB_START, BTN_LAB_START)
 
@@ -168,6 +171,8 @@ class Lab() :
     def updatepanel(self) :
         x = 16*SQUARE
 
+        self.disp.blit(IMG_LEVEL, RECT_LEVEL)
+        self.disp.blit(IMG_MONEY, RECT_MONEY)
         level = utils.write("Level : " + str(self.level), WHITE, 13)
         money = utils.write("Money : " + str(self.money), WHITE, 13)
 
@@ -250,18 +255,18 @@ class Lab() :
                 elif c == '4' : self.disp.blit(IMG_FIRE, (x,y))
                 elif c in ['.', ';', '?', '!', '*'] :
                     i = x/32
-                    if i <= 0 or not l[i-1] in ['<', '=', '>'] :
+                    if i <= 0 or l[i-1] in [' ', '4'] :
                         self.disp.blit(IMG_TABLE_L, (x,y))
-                    elif i >= 15 or not l[i+1] in ['<', '=', '>'] :
-                        self.disp.blit(IMG_TABLE_L, (x,y))
+                    elif i >= 15 or l[i+1] in [' ', '4'] :
+                        self.disp.blit(IMG_TABLE_R, (x,y))
                     else :
                         self.disp.blit(IMG_TABLE_M, (x,y))
 
-                    if c == '.' : self.disp.blit(IMG_SPEEDOMETER, (x,y))
-                    elif c == ';' : self.disp.blit(IMG_ERROR, (x,y))
-                    elif c == '?' : self.disp.blit(IMG_INTERESTING, (x,y))
-                    elif c == '!' : self.disp.blit(IMG_FAILED, (x,y))
-                    elif c == '*' : self.disp.blit(IMG_STARTFIRE, (x,y))
+                    if c == '.' : self.disp.blit(IMG_SPEEDOMETER, (x,y-10))
+                    elif c == ';' : self.disp.blit(IMG_ERROR, (x,y-10))
+                    elif c == '?' : self.disp.blit(IMG_INTERESTING, (x,y-10))
+                    elif c == '!' : self.disp.blit(IMG_FAILED, (x,y-10))
+                    elif c == '*' : self.disp.blit(IMG_STARTFIRE, (x,y-10))
 
 
                 x += 32
@@ -284,15 +289,18 @@ class Lab() :
                 self.main()
                 x, y = int(pos[0]/SQUARE), int(pos[1]/SQUARE)
                 if self.lab[y][x] in ["<", "=", ">"] :
-                    self.disp.blit(img_trap, (x*SQUARE,y*SQUARE))
+                    self.disp.blit(img_trap, (x*SQUARE,y*SQUARE-10))
 
                 pygame.display.update()
 
         def onclick(pos) :
             x, y = int(pos[0]/SQUARE), int(pos[1]/SQUARE)
-            if self.lab[y][x] in ["<", "=", ">"] :
-                self.money -= trapmoney
-                self.lab[y][x] = trapchar
+            try :
+                if self.lab[y][x] in ["<", "=", ">"] :
+                    self.money -= trapmoney
+                    self.lab[y][x] = trapchar
+            except IndexError :
+                pass
 
             self.updatepanel() # update money
             self.selectmode()

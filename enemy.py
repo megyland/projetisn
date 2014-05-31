@@ -36,8 +36,8 @@ class Enemy :
             for i in directions :
                 if isintable(i, self.table) and self.table[i[1]][i[0]].isspace() and i != self.prev :
                     newpos = i
-                    if self.disturbed and randint(0, 10) == 5 :
-                        newpos = self.prev
+                    # if self.disturbed and randint(0, 50) == 0 :
+                    #     newpos = self.prev
 
                     self.prev = self.pos
                     self.pos = newpos
@@ -50,12 +50,14 @@ class Enemy :
 
     def getprev(self) : return self.prev
 
-    def getunmoving(self) :
-        if self.unmoving :
-            self.unmoving -= 1
-            return True
+    def getdisturbed(self) : return self.disturbed
 
-        return False
+    def getunmoving(self) :
+        u = self.unmoving
+        if self.unmoving :
+            self.unmoving = 0
+
+        return u
 
     def setstatus(self,trap) :
         if trap == ";" : # Erreur de calcul => Immobilise un certain temps (durée moyenne)

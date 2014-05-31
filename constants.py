@@ -66,6 +66,9 @@ IMG_LEVEL			= pygame.image.load( os.path.join("img", "levelSection.png") )
 IMG_MONEY			= pygame.image.load( os.path.join("img", "moneySection.png") )
 IMG_SIDEPANEL_BG	= pygame.image.load( os.path.join("img", "sidepanelBackground.png") )
 
+RECT_LEVEL          = (16*SQUARE, 0, 217, 16)
+RECT_MONEY          = (16*SQUARE+217, 0, 217, 16)
+
 # Traps
 ## Image, name, description, price
 ## u"string" allows pygame to use unicode
