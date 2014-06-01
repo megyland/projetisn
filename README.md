@@ -34,7 +34,7 @@ Travail de _megyland_ par séance :
 *__27/03__* :
  - Création du logo du jeu
  
-*__Date non renseignée_*
+*__Date non renseignée__*
  - Création de l'apparence de Schrödinger
  - Création de l'ensemble des boutons composant l'interface
  - Images de l'apparence du niveau
