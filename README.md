@@ -1,4 +1,4 @@
-![alt text](http://img15.hostingpics.net/pics/115992Schrodinger.png "Schrödinger")Projet ISN : Schrödinger's Cat
+![alt text](http://img15.hostingpics.net/pics/115992Schrodinger.png "Schrödinger")  Projet ISN : Schrödinger's Cat
 ================================================================================================================
 
 ![alt text](http://img15.hostingpics.net/pics/916035logom.png "Logo")
@@ -72,4 +72,4 @@ Travail de _pascalcpp_ par séance :
  - Ajout de l'écran d'accueil (les images pourront êtres modifiées par la suite, je les ai créées à l'arrache pour pouvoir tester)
 
 *******************
-**NB : Pour tester le programme, il est nécessaire de le télécharger avec l'option _Download ZIP_, puis de lancer le fichier _main.py_. Le jeu nécessite python et la librairie pygame pour fonctionner**
+**NB : Pour tester le programme, il est nécessaire de le télécharger avec l'option _Download ZIP_, puis de lancer le fichier _main.py_. Le jeu nécessite python et la librairie pygame pour fonctionner.**
