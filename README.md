@@ -1,5 +1,5 @@
-Projet ISN : Schrödinger's Cat
-==========
+![alt text](http://img15.hostingpics.net/pics/115992Schrodinger.png "Schrödinger")Projet ISN : Schrödinger's Cat
+================================================================================================================
 
 ![alt text](http://img15.hostingpics.net/pics/916035logom.png "Logo")
 
