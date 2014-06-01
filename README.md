@@ -16,6 +16,8 @@ Objectif | Personne en charge | Etat | Commentaires | Priorité
 IA de Schrödinger | Choumat | En développement | Le personnage ne se déplace pas ; nouvelle proposition de pascalcpp ; il manque la gestion des embranchements | !!!
 Apparence écran d'accueil | megyland | En développement | | !
 Apparence Schrödinger | megyland | Fini | | !
+Apparence niveau | megyland | Fini | | !
+Interface utilisateur | megyland | Fini | !
 Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
 Ajout de _Expérience intéressante_ | Choumat | En test | Arrêt court, puis redémarrage normal | !!
 Ajout de _Compteur de vitesse_ | Choumat | En test | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
@@ -63,4 +65,4 @@ Travail de _pascalcpp_ par séance :
  - Ajout de l'écran d'accueil (les images pourront êtres modifiées par la suite, je les ai créées à l'arrache pour pouvoir tester)
 
 *******************
-**NB : Pour tester le programme, il est nécessaire de le télécharger avec l'option _Download ZIP_, puis de lancer le fichier _main.py_.**
+**NB : Pour tester le programme, il est nécessaire de le télécharger avec l'option _Download ZIP_, puis de lancer le fichier _main.py_. Le jeu nécessite python et la librairie pygame pour fonctionner**
