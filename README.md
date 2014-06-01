@@ -17,7 +17,7 @@ IA de Schrödinger | Choumat pascalcpp | En développement | Le personnage ne se
 Apparence écran d'accueil | megyland | En développement | | !
 Apparence Schrödinger | megyland | Fini | | !
 Apparence niveau | megyland | Fini | | !
-Interface utilisateur | megyland | Fini | !
+Interface utilisateur | megyland | Fini | | !
 Ajout de _Erreur de calcul_ | Choumat | Fini | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
 Ajout de _Expérience intéressante_ | Choumat | Fini | Arrêt court, puis redémarrage normal | !!
 Ajout de _Compteur de vitesse_ | Choumat | Fini | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
