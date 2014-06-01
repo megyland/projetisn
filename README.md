@@ -13,15 +13,15 @@ Répartition du travail :
 
 Objectif | Personne en charge | Etat | Commentaires | Priorité
 :-------:|:------------------:|:----:|:------------:| :------:
-IA de Schrödinger | Choumat | En développement | Le personnage ne se déplace pas ; nouvelle proposition de pascalcpp ; il manque la gestion des embranchements | !!!
+IA de Schrödinger | Choumat pascalcpp | En développement | Le personnage ne se déplace pas ; nouvelle proposition de pascalcpp ; il manque la gestion des embranchements | !!!
 Apparence écran d'accueil | megyland | En développement | | !
 Apparence Schrödinger | megyland | Fini | | !
 Apparence niveau | megyland | Fini | | !
 Interface utilisateur | megyland | Fini | !
-Ajout de _Erreur de calcul_ | Choumat | En test | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
-Ajout de _Expérience intéressante_ | Choumat | En test | Arrêt court, puis redémarrage normal | !!
-Ajout de _Compteur de vitesse_ | Choumat | En test | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
-Ajout de _Expérience ratée_ | Choumat | En test | Arrêt long, puis redémarrage normal | !!
+Ajout de _Erreur de calcul_ | Choumat | Fini | Arrêt moyen de Schrödinger, puis redémarrage normal | !!
+Ajout de _Expérience intéressante_ | Choumat | Fini | Arrêt court, puis redémarrage normal | !!
+Ajout de _Compteur de vitesse_ | Choumat | Fini | Schrö. continue tout droit sur un certain nombre de pas sans être capable de tourner, un autre piège interrompt l'effet ; s'il s'est cogné contre un mur, il s'arrête un temps | !!
+Ajout de _Expérience ratée_ | Choumat | Fini | Arrêt long, puis redémarrage normal | !!
 Ajout de _Début d'incendie_ | ? | ? | Propagation d'un feu, chaque flamme demande du temps à Schrödinger pour être éteinte ; si une flamme atteint le chat, il meurt | !!
 Placement des objets | pascalcpp | Fini |
 Ecran d'accueil | pascalcpp | Fini | Nouvelles images proposées
@@ -31,6 +31,13 @@ Score | ? | Fini | Sert de monnaie d'échange pour les objets |
 
 Travail de _megyland_ par séance :
 ---------------------------------
+*__27/03__* :
+ - Création du logo du jeu
+ 
+*__Date non renseignée_*
+ - Création de l'apparence de Schrödinger
+ - Création de l'ensemble des boutons composant l'interface
+ - Images de l'apparence du niveau
 
 Travail de _Choumat_ par séance :
 --------------------------------
